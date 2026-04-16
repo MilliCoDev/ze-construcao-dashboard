@@ -219,6 +219,7 @@ thead {
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .modal-card h2 {
@@ -308,7 +309,14 @@ thead {
     }
 
     .modal-card {
+        width: calc(100vw - 24px);
+        max-width: 420px;
         padding: 16px;
+    }
+
+    .modal-acoes {
+        flex-direction: column;
+        justify-content: stretch;
     }
 }
 
