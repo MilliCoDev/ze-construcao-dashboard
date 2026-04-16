@@ -2,6 +2,11 @@
 
 Aplicação web simples para estudo, com foco em gestão de loja de materiais de construção.
 
+## Demo
+
+GitHub Pages (após ativar no repositório):  
+`https://millicodev.github.io/ze-construcao-dashboard/`
+
 ## Funcionalidades
 
 - Login de administrador
@@ -49,3 +54,8 @@ Projeto educacional/demonstração. Não use essas credenciais em produção.
 - **Banco de dados/API:** troque apenas o `data-gateway.js` por uma versão HTTP sem reescrever a interface.
 - **Deploy:** o projeto continua estático e pode subir em GitHub Pages, Vercel ou Netlify.
 - **Configuração central:** login e chave de storage ficam em `config.js`, facilitando ambientes (dev/prod).
+
+## Sugestões para o GitHub
+
+- **Descrição do repositório:** Dashboard web para controle de estoque, vendas e caixa de loja de materiais de construção.
+- **Tópicos (tags):** `html`, `css`, `javascript`, `dashboard`, `inventory-management`, `cash-flow`, `github-pages`
