@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Loja de Materiais de Construção</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="login-box" id="loginBox">
+            <h1>Zé Construção</h1>
+            <form id="loginForm">
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuario" name="usuario" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <button type="submit">Entrar</button>
+            </form>
+            <p id="mensagem"></p>
+        </div>
+
+        <main class="painel" id="painelSistema">
+            <header class="painel-header">
+                <div>
+                    <h1>Painel da Loja</h1>
+                    <p class="subtitulo">Controle de estoque, vendas e caixa em um só lugar.</p>
+                </div>
+                <button type="button" id="sairBtn">Sair</button>
+            </header>
+
+            <section class="cards">
+                <div class="card">
+                    <h2>Cadastro de Produto</h2>
+                    <form id="cadastroForm">
+                        <label for="nomeProduto">Nome do produto</label>
+                        <input type="text" id="nomeProduto" required>
+
+                        <label for="qtdProduto">Quantidade inicial</label>
+                        <input type="number" id="qtdProduto" min="1" required>
+
+                        <label for="precoProduto">Preço unitário (R$)</label>
+                        <input type="number" id="precoProduto" min="0.01" step="0.01" required>
+
+                        <button type="submit">Cadastrar</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h2>Venda de Produto</h2>
+                    <form id="vendaForm">
+                        <label for="produtoVenda">Produto</label>
+                        <select id="produtoVenda" required>
+                            <option value="">Selecione um produto</option>
+                        </select>
+
+                        <label for="qtdVenda">Quantidade vendida</label>
+                        <input type="number" id="qtdVenda" min="1" required>
+
+                        <button type="submit">Registrar venda</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="cards resumo-financeiro">
+                <div class="card card-resumo">
+                    <h2>Total em caixa</h2>
+                    <p id="valorCaixa">R$ 0,00</p>
+                </div>
+                <div class="card card-resumo">
+                    <h2>Total vendido</h2>
+                    <p id="valorTotalVendido">R$ 0,00</p>
+                </div>
+                <div class="card card-resumo">
+                    <h2>Quantidade de vendas</h2>
+                    <p id="quantidadeVendas">0</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Controle de Estoque</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Estoque atual</th>
+                        </tr>
+                    </thead>
+                    <tbody id="estoqueBody">
+                        <tr>
+                            <td colspan="2">Nenhum produto cadastrado.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p id="mensagemSistema"></p>
+            </section>
+
+            <section class="card">
+                <h2>Registro de Vendas (Caixa)</h2>
+                <div class="acoes-caixa">
+                    <button type="button" id="exportarCsvBtn">Exportar vendas (CSV)</button>
+                    <button type="button" id="limparDadosBtn" class="btn-perigo">Limpar dados</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data/Hora</th>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Valor unitário</th>
+                            <th>Total da venda</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vendasBody">
+                        <tr>
+                            <td colspan="5">Nenhuma venda registrada.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <footer class="rodape">
+                <p>Projeto de estudo - Zé Construção</p>
+            </footer>
+        </main>
+
+        <div class="modal-overlay oculto" id="modalConfirmacao">
+            <div class="modal-card">
+                <h2>Confirmar limpeza</h2>
+                <p>Deseja realmente limpar todo o estoque e o histórico de vendas?</p>
+                <div class="modal-acoes">
+                    <button type="button" id="confirmarLimpezaBtn" class="btn-perigo">Sim</button>
+                    <button type="button" id="cancelarLimpezaBtn">Não</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="config.js"></script>
+        <script src="data-gateway.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
+
