@@ -5,7 +5,7 @@ Aplicação web simples para estudo, com foco em gestão de loja de materiais de
 ## Demo
 
 GitHub Pages (após ativar no repositório):  
-`https://millicodev.github.io/ze-construcao-dashboard/`
+`https://millicodev.github.io/construction-dashboard/`
 
 ## Funcionalidades
 
